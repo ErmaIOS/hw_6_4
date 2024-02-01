@@ -17,7 +17,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     
     private lazy var loopImage: UIImageView = MakeView.shared.makerImage(imageName: "loopImage",imageBackgroundColor: .white, imageTintColor: .black)
     
-    private lazy var horizontalCollectionView: UICollectionView = MakeView.shared.makerCollectionView(cvItemWidth: UIScreen.main.bounds.width - 40, cvItemSize: 160,cvMinimumLineSpacing: 20,cvMinimumInteritemSpacing: 0,cvScrollDirection: .horizontal,cvCornerRadius: 16, cvBackgroundColor: .white)
+    private lazy var horizontalCollectionView: UICollectionView = MakeView.shared.makerCollectionView(cvItemWidth: UIScreen.main.bounds.width - 40, cvItemSize: 160,cvMinimumLineSpacing: 20,cvMinimumInteritemSpacing: 0, cvSectionInset: .init(top: 0, left: 20, bottom: 0, right: 0),cvScrollDirection: .horizontal,cvCornerRadius: 16, cvBackgroundColor: .white)
     
     private lazy var sortByLabel: UILabel = MakeView.shared.makerLabel(text: "Sort by",textColor: .black,textSize: 20,textWeight: .bold)
     
@@ -28,7 +28,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
     private lazy var upDownImage: UIImageView = MakeView.shared.makerImage(imageName: "arrowUpDown",imageTintColor: .red)
     
     
-    private lazy var verticalCollectionView: UICollectionView = MakeView.shared.makerCollectionView(cvItemWidth: (UIScreen.main.bounds.width / 2) - 40, cvItemSize: 200, cvMinimumLineSpacing: 20,cvMinimumInteritemSpacing: 0,cvScrollDirection: .vertical,cvCornerRadius: 16,cvBackgroundColor: .white)
+    private lazy var verticalCollectionView: UICollectionView = MakeView.shared.makerCollectionView(cvItemWidth: (UIScreen.main.bounds.width / 2) - 40, cvItemSize: 200, cvMinimumLineSpacing: 20,cvMinimumInteritemSpacing: 0, cvSectionInset: .init(top: 0, left: 0, bottom: 0, right: 20),cvScrollDirection: .vertical,cvCornerRadius: 16,cvBackgroundColor: .white)
 
     
     
@@ -66,7 +66,7 @@ class ViewController: UIViewController, UICollectionViewDataSource {
         private func setupCollectionView(){
             horizontalCollectionView.snp.makeConstraints { make in
                 make.top.equalTo(backImage.snp.bottom).offset(25)
-                make.horizontalEdges.equalToSuperview().inset(20)
+                make.horizontalEdges.equalToSuperview()
                 make.height.equalTo(160)
             }
             

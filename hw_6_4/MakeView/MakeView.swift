@@ -44,6 +44,7 @@ class MakeView{
                               cvItemSize: CGFloat,
                               cvMinimumLineSpacing: CGFloat = 20,
                               cvMinimumInteritemSpacing: CGFloat = 0,
+                              cvSectionInset: UIEdgeInsets ,
                               cvScrollDirection: UICollectionView.ScrollDirection = .vertical,
                               cvCornerRadius: CGFloat = 16,
                               cvBackgroundColor: UIColor?
@@ -52,6 +53,7 @@ class MakeView{
         layout.itemSize = .init(width: cvItemWidth, height: cvItemSize)
         layout.minimumLineSpacing = cvMinimumLineSpacing
         layout.minimumInteritemSpacing = cvMinimumInteritemSpacing
+        layout.sectionInset = cvSectionInset
         layout.scrollDirection = cvScrollDirection
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.layer.cornerRadius = cvCornerRadius
